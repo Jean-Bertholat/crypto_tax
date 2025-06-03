@@ -96,6 +96,9 @@ def build_report(portfolio: List[Asset], transactions) -> Report:
                 print(f"  {buy['quantity']}/{buy['original_quantity']} units @ {buy['price']}€")
             print("----------------------------------------")
     
+    # Calculate tax due (example rate of 30%)
+    report.tax_due = report.capital_gains * 0.30
+    
     return report
 
 
